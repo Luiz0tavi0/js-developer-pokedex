@@ -84,6 +84,7 @@
     margin: .5rem;
     padding: 1rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .pokemon .number {
@@ -145,6 +146,47 @@
     border: none;
     border-radius: 1rem;
 }
+
+/* Styles for modal and backdrop */
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    backdrop-filter: blur(1px);
+    /* Aplica o efeito de desfoque */
+}
+
+.modal-content {
+    top:-5rem;
+    margin-top: 150px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: none;
+    min-width: 18rem;
+    min-height: 30rem;
+    position: relative;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, .51);
+    border-radius: 1rem;
+}
+
+.modal-content .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.hidde {
+    display: none;
+}
+
+
+
 
 @media screen and (min-width: 380px) {
     .pokemons {
