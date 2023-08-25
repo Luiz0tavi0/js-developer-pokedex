@@ -1,21 +1,20 @@
 import Pokemon from './pokemon-model.js';
+import { API_URL } from './constants.js';
 const pokeApi = {}
 
-function convertPokeApiDetailToPokemon(pokeDetail) {
-    const pokemon = new Pokemon()
-    pokemon.number = pokeDetail.id
-    pokemon.name = pokeDetail.name
 
-    const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
-    const [type] = types
-
-    pokemon.types = types
-    pokemon.type = type
-
-    pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
-
-    return pokemon
+function convertPokeApiDetailToPokemon({ id, name, sprites: { other: { dream_world: { front_default } } }, types }) {
+    const typesPokemon = types.map(typeSlot => typeSlot.type.name);
+    const pokemon = new Pokemon({
+        number: id,
+        name,
+        type: typesPokemon[0],
+        types: typesPokemon,
+        photo: front_default
+    });
+    return pokemon;
 }
+
 
 pokeApi.getPokemonDetail = (pokemon) => {
     return fetch(pokemon.url)
@@ -24,7 +23,7 @@ pokeApi.getPokemonDetail = (pokemon) => {
 }
 
 pokeApi.getPokemons = (offset = 0, limit = 5) => {
-    const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
+    const url = `${API_URL}?offset=${offset}&limit=${limit}`;
 
     return fetch(url)
         .then((response) => response.json())
