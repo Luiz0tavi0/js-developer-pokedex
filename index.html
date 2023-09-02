@@ -25,14 +25,37 @@
 <body>
     <section class="content">
         <h1>Pokedex</h1>
-        <div id="modal" class="modal ">
-            <div class="modal-content">
-                <div class="header">
-                    <span class="close" id="closeModalButton">&#129136;</span>
-                    <span class="favorite" id="favoriteModalButton">♡</span>
+        <div id="modal" class="modal hidde">
+            <div class="modal-content grass">
+                <div class="top">
+                    <div class="header">
+                        <span class="close" id="closeModalButton">&#129136;</span>
+                        <span class="favorite" id="favoriteModalButton">♡</span>
+                    </div>
+                    <div class="modal-basic-info">
+                        <h2 id="modalTitle">Bulbasaur</h2>
+                        <p id="modalBody">#001</p>
+                    </div>
+                    <div class="detail">
+                        <ol class="types">
+                            <li class="type grass">grass</li>
+                            <li class="type poison">poison</li>
+                        </ol>
+                    </div>
+
+                    <img id='main-image'
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
+                        alt="bulbasaur">
                 </div>
-                <h2 id="modalTitle">Bulasaur</h2>
-                <p id="modalBody">1</p>
+                <div class="bottom">
+                    <div class="tabs">
+                        <button id='about' class="tab active">About</button>
+                        <button id='base-status' class="tab">Base Stats</button>
+                        <button id='evolution' class="tab">Evolution</button>
+                        <button id='moves' class="tab">Moves</button>
+                    </div>
+
+                </div>
             </div>
         </div>
 

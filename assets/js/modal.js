@@ -1,15 +1,21 @@
+import pokeApi from "./poke-api.js";
 const modal = document.querySelector('#modal');
-modal.addEventListener('click', () => { console.log('clicou no modal') });
+const closeModalButton = document.querySelector("#closeModalButton");
+const favoriteModalButton = document.querySelector("#favoriteModalButton");
+const toggleModal = () => modal.classList.toggle('hidde');
+
+closeModalButton.addEventListener('click', toggleModal);
 
 
 
-function makeModal() {
-    const modal = document.createElement('div')
-    modal.className = "modal";
+
+function makeModal(idPokemon) {
+    
+    toggleModal();
+    console.log('clicou no pokemon: ', idPokemon);
 
 
-
-    content.appendChild(modal);
+    // content.appendChild(modal);
 
 }
 

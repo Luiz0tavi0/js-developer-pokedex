@@ -43,7 +43,7 @@ function convertPokemonToLi({ type, number, name, types, photo }) {
     detailList.appendChild(pokemonPhoto);
 
     listItemPokemon.appendChild(detailList);
-
+    listItemPokemon.addEventListener('click', () => makeModal(number));
     return listItemPokemon;
 
 }
@@ -76,4 +76,4 @@ loadMoreButton.addEventListener('click', () => {
     }
 });
 
-makeModal()
+// makeModal()
